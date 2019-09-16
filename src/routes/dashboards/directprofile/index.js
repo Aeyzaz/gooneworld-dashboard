@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router';
 import axios from 'axios';
 
-class DirectLink extends Component{
+class DirectProfile extends Component{
 	
 	componentWillMount(){
 		
@@ -13,7 +13,7 @@ class DirectLink extends Component{
 		this.accessToken(_iduser, _token).
 		then(data => {
 			//history.push('/app/dashboards/default');
-			location.href='/app/dashboards/default';
+			location.href='/app/app/users/useredit';
 		}).
 		catch(
 			(error) => location.href='https://www.gooneworld.com/login'
@@ -57,4 +57,4 @@ class DirectLink extends Component{
 	
 }
 
-export default withRouter(DirectLink);
+export default withRouter(DirectProfile);

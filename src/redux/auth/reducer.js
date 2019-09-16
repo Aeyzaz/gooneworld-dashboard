@@ -8,7 +8,7 @@ import {
 
 const INIT_STATE = {
     user: localStorage.getItem('user_id'),
-    photouser: localStorage.getItem('photouser'),
+    photouser: '',
     loading: false
 };
 
@@ -25,7 +25,8 @@ export default (state = INIT_STATE, action) => {
         case LOGOUT_USER:
             return { ...state ,user:null};
         case 'GET_PHOTO':
-            return { ...state, photouser: action.payload.photouser};
+            console.log("reduce ", state);
+            return { ...state, photouser: action.payload.items.profilePhoto.link};
         default: return { ...state };
     }
 }

@@ -28,6 +28,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 import TagsInput from "react-tagsinput";
 
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import {
@@ -190,15 +191,19 @@ class UserEdit extends Component {
 
         axios.get(API_URL, axiosConfigObject)
             .then((res)=>{
-                console.log("resultado ",res);
+                //console.log("resultado ",res);
                 localStorage.setItem('photouser', res.data.profilePhoto.link);
-                console.log("nueva foto ",res.data.profilePhoto.link);
+                
                 this.setState({
-                    items: res.data
+                    items: res.data,
+                    photouser : res.data.profilePhoto.link
                 });
+
+                //console.log("photpuser ",this.state.photouser)
+
+                this.props.calluserPhoto(this.state);
                 //this.props.getUserPhoto(this.state);
                 //photouser: res.data.profilePhoto.link
-                //console.log(this.state);
             })
             .catch((err)=>{
                 console.error(err);
@@ -618,4 +623,16 @@ class UserEdit extends Component {
         );
     }
 }
-export default  injectIntl(UserEdit)
+
+/*const MapStateToProps = state => ({
+    authUser: state.authUser
+});*/
+
+const MapStateToProps = ({ authUser }) => {
+  const { user } = authUser;
+  return user;
+};
+
+//const MapDispatchToProps = dispatch => bindActionCreators({calluserPhoto} , dispatch);
+
+export default  connect(MapStateToProps, { calluserPhoto })(UserEdit);

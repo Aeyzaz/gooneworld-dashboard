@@ -18,7 +18,8 @@ import {
   setContainerClassnames,
   clickOnMobileMenu,
   logoutUser,
-  changeLocale
+  changeLocale,
+  calluserPhoto
 } from "Redux/actions";
 
 import { menuHiddenBreakpoint, searchPath,localeOptions } from "Constants/defaultValues";
@@ -42,7 +43,7 @@ class TopNav extends Component {
     };
 
 
-    console.log('index props',props);
+    console.log('index props topNav.js ',props);
   }
   
   handleChangeLocale = locale => {
@@ -271,8 +272,8 @@ class TopNav extends Component {
         </div>*/}
 
         <a className="navbar-logo" href="/" style={{'top':'10px'}}>
-          {/*<span className="logo d-none d-xs-block" style={{'backgroundSize':'contain','width':'70px','height':'70px'}}/>
-          <span className="logo-mobile d-block d-xs-none" />*/}
+          <span className="logo d-none d-xs-block" style={{'backgroundSize':'contain','width':'70px','height':'70px'}}/>
+          <span className="logo-mobile d-block d-xs-none" />
         </a>
 
         <div className="ml-auto">
@@ -403,7 +404,9 @@ class TopNav extends Component {
                 <span className="name mr-1"></span>
                 <span>
                   {/*<img alt="Profile" src="/assets/img/profile-pic-l.jpg" />*/}
-                  <img alt="Profile" src={localStorage.getItem('photouser')} id="foto"/>
+                  {/*<img alt="Profile" src={localStorage.getItem('photouser')} id="foto"/>*/}
+                  {/*<img alt="Profile" src={this.state.photouser} id="foto"/>*/}
+                  Profile
                 </span>
               </DropdownToggle>
               <DropdownMenu className="mt-3" right>

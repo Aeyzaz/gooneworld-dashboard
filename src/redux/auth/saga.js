@@ -110,7 +110,7 @@ function* logout({payload}) {
     }
 }
 
-const userPhoto = (photo) => {
+const userPhoto = photo => {
     /*await axios({
             method: 'get',
             url: 'https://api.gooneworld.com/api/Users/'+user_id+'?access_token='+token
@@ -119,14 +119,18 @@ const userPhoto = (photo) => {
             localStorage.setItem('photouser', res.data.profilePhoto.link);
             //"5d5c15263ad7a07791b9ef04"
         });*/
+    console.log("userphoto", photo);
+
     localStorage.setItem('photouser', photo);
     
 }
 
 function* get_userPhoto({payload}){
-    const { photo } = payload;
+    console.log("pago ",payload);
+    const { photouser } = payload;
+    //const { link } = items.profilePhoto;
     try {
-        userPhoto(photo);
+        userPhoto(photouser);
     } catch (error) {
         // catch throw
         console.log('photo get error : ', error)

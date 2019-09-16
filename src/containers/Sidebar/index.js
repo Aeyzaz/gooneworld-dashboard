@@ -263,8 +263,21 @@ class Sidebar extends Component {
                     to="/app/listings"
                     onClick={e => this.openSubMenu(e, "listings")}
                   >
-                    <i className="iconsmind-Digital-Drawing" />{" "}
-                    <IntlMessages id="Listings" />
+                    <i className="simple-icon-doc" />{" "}
+                    <IntlMessages id="Add Listing" />
+                  </NavLink>
+                </NavItem>
+
+                <NavItem
+                  className={classnames({
+                    active: ((this.state.selectedParentMenu == "listings" && this.state.viewingParentMenu=="" ) || this.state.viewingParentMenu=="listings")
+                  })}
+                >
+                  <NavLink
+                    to="/app/listings/list"
+                  >
+                    <i className="simple-icon-notebook" />{" "}
+                    <IntlMessages id="My Listings" />
                   </NavLink>
                 </NavItem>
 
@@ -277,7 +290,7 @@ class Sidebar extends Component {
                     to="/app/favorites"
                     onClick={e => this.openSubMenu(e, "favorites")}
                   >
-                    <i className="iconsmind-Digital-Drawing" />{" "}
+                    <i className="simple-icon-heart" />{" "}
                     <IntlMessages id="Favorites" />
                   </NavLink>
                 </NavItem>
@@ -291,7 +304,7 @@ class Sidebar extends Component {
                     to="/app/savedsearch"
                     onClick={e => this.openSubMenu(e, "savedsearch")}
                   >
-                    <i className="iconsmind-Digital-Drawing" />{" "}
+                    <i className="simple-icon-star" />{" "}
                     <IntlMessages id="SavedSearch" />
                   </NavLink>
                 </NavItem>
@@ -313,13 +326,13 @@ class Sidebar extends Component {
                 })}
                 data-parent="listings"
               >
-                <NavItem>
+                {/*<NavItem>
                   <NavLink to="/app/listings/list">
                     <i className="simple-icon-briefcase" />{" "}
                     <IntlMessages id="Listing List" />
                   </NavLink>
                 </NavItem>
-                {/*<NavItem>
+                <NavItem>
                   <NavLink to="/app/listings/listingadd_com">
                     <i className="simple-icon-briefcase" />{" "}
                     <IntlMessages id="Add Listing Commercial Business Agricultural Industrial" />
@@ -339,21 +352,21 @@ class Sidebar extends Component {
                 </NavItem>*/}
                 <NavItem>
                   <NavLink to="/app/listings/listingadd_sale">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-note" />{" "}
                     <IntlMessages id="Add Listing for Sale" />
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
                   <NavLink to="/app/listings/listingadd_rent">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-note" />{" "}
                     <IntlMessages id="Add Listing for Rent" />
                   </NavLink>
                 </NavItem>
 
                 <NavItem>
                   <NavLink to="/app/listings/listingadd_landsale">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-note" />{" "}
                     <IntlMessages id="Add Listing Land for Sale" />
                   </NavLink>
                 </NavItem>
@@ -367,7 +380,7 @@ class Sidebar extends Component {
               >
                 <NavItem>
                   <NavLink to="/app/users/useradd">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-user" />{" "}
                     <IntlMessages id="Add User" />
                   </NavLink>
                 </NavItem>
@@ -383,7 +396,7 @@ class Sidebar extends Component {
               >
                 <NavItem>
                   <NavLink to="/app/favorites/list">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-heart" />{" "}
                     <IntlMessages id="Favorites" />
                   </NavLink>
                 </NavItem>
@@ -397,7 +410,7 @@ class Sidebar extends Component {
               >
                 <NavItem>
                   <NavLink to="/app/savedsearch/list">
-                    <i className="simple-icon-briefcase" />{" "}
+                    <i className="simple-icon-star" />{" "}
                     <IntlMessages id="SavedSearch" />
                   </NavLink>
                 </NavItem>
