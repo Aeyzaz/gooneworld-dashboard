@@ -49,6 +49,7 @@
     "draft-js": "^0.10.5",
     "fine-uploader": "^5.16.2",
     "firebase": "^5.3.0",
+    "grpc": "^1.23.3",
     "moment": "2.22.2",
     "rc-slider": "^8.6.1",
     "rc-switch": "^1.6.0",
@@ -87,6 +88,6 @@
     "video.js": "^7.3.0"
   },
   "engines": {
-    "node": "10.15.3"
+    "node": "12.4.0"
   }
 }
